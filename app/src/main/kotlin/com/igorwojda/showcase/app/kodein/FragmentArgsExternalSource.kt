@@ -4,21 +4,20 @@ import androidx.annotation.MainThread
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavArgs
 import androidx.navigation.NavArgsLazy
-import org.kodein.di.Kodein
-import org.kodein.di.bindings.BindingKodein
+import org.kodein.di.DI
+import org.kodein.di.bindings.BindingDI
 import org.kodein.di.bindings.ExternalSource
-import org.kodein.di.fullErasedName
-import org.kodein.di.jvmType
+import org.kodein.type.jvmType
 import kotlin.reflect.KClass
 
 class FragmentArgsExternalSource : ExternalSource {
-    override fun getFactory(kodein: BindingKodein<*>, key: Kodein.Key<*, *, *>): ((Any?) -> Any)? {
+    override fun getFactory(kodein: BindingDI<*>, key: DI.Key<*, *, *>): ((Any?) -> Any)? {
         val fragment = kodein.context as? Fragment
 
         if (fragment != null) {
             val deductedArgsClassName = fragment.javaClass.canonicalName + "Args"
 
-            if (deductedArgsClassName == key.type.jvmType.fullErasedName()) {
+            if (deductedArgsClassName == key.type.jvmType.typeName) {
 
                 val navArgsInstance = getNavArgsInstance(fragment)
 

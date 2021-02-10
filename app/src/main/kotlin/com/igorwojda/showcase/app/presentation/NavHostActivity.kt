@@ -8,7 +8,7 @@ import com.igorwojda.showcase.base.extension.viewBinding
 import com.igorwojda.showcase.base.presentation.activity.BaseActivity
 import com.igorwojda.showcase.base.presentation.navigation.NavManager
 import com.igorwojda.showcase.databinding.ActivityNavHostBinding
-import org.kodein.di.generic.instance
+import org.kodein.di.instance
 
 class NavHostActivity : BaseActivity() {
 

@@ -4,24 +4,19 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.igorwojda.showcase.BuildConfig
-import org.kodein.di.Kodein
-import org.kodein.di.KodeinAware
-import org.kodein.di.KodeinTrigger
-import org.kodein.di.android.kodein
-import org.kodein.di.android.retainedKodein
-import org.kodein.di.generic.kcontext
+import org.kodein.di.Copy
+import org.kodein.di.DIAware
+import org.kodein.di.DITrigger
+import org.kodein.di.android.retainedSubDI
+import org.kodein.di.diContext
 
-abstract class InjectionActivity : AppCompatActivity(), KodeinAware {
-
-    private val parentKodein by kodein()
+abstract class InjectionActivity : AppCompatActivity(), DIAware {
 
     @SuppressWarnings("LeakingThisInConstructor")
-    final override val kodeinContext = kcontext<AppCompatActivity>(this)
+    final override val diContext = diContext<AppCompatActivity>(this)
 
     // Using retainedKodein will not recreate Kodein when the Activity restarts
-    final override val kodein: Kodein by retainedKodein {
-        extend(parentKodein)
-    }
+    override val di by retainedSubDI(di(), copy = Copy.All) { }
 
     /*
     Dependency resolution for debug builds:
@@ -38,12 +33,12 @@ abstract class InjectionActivity : AppCompatActivity(), KodeinAware {
     http://kodein.org/Kodein-DI/?latest/android#_using_a_trigger
 
      */
-    final override val kodeinTrigger: KodeinTrigger? by lazy {
-        if (BuildConfig.DEBUG) KodeinTrigger() else super.kodeinTrigger
+    final override val diTrigger: DITrigger? by lazy {
+        if (BuildConfig.DEBUG) DITrigger() else super.diTrigger
     }
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
-        kodeinTrigger?.trigger()
+        diTrigger?.trigger()
     }
 }

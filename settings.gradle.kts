@@ -97,11 +97,11 @@ dependencyResolutionManagement {
             alias("stetho-okhttp3").to("com.facebook.stetho", "stetho-okhttp3").versionRef("stetho")
             bundle("stetho", listOf("stetho-core", "stetho-okhttp3"))
 
-            version("kodein", "6.5.5")
+            version("kodein", "7.3.0")
             // Required by Android dynamic feature modules and SafeArgs
-            alias("kodein-core").to("org.kodein.di", "kodein-di-generic-jvm").versionRef("kodein")
+//            alias("kodein-core").to("org.kodein.di", "kodein-di-generic-jvm").versionRef("kodein")
             alias("kodein-android-x").to("org.kodein.di", "kodein-di-framework-android-x").versionRef("kodein")
-            bundle("kodein", listOf("kodein-core", "kodein-android-x"))
+            bundle("kodein", listOf("kodein-android-x"))
 
             alias("timber").to("com.jakewharton.timber:timber:4.7.1")
             alias("constraintlayout").to("androidx.constraintlayout:constraintlayout:2.0.4")

@@ -1,6 +1,6 @@
 package com.igorwojda.showcase.feature.favourite.data
 
 import com.igorwojda.showcase.feature.favourite.MODULE_NAME
-import org.kodein.di.Kodein
+import org.kodein.di.DI
 
-internal val dataModule = Kodein.Module("${MODULE_NAME}DataModule") { }
+internal val dataModule = DI.Module("${MODULE_NAME}DataModule") { }

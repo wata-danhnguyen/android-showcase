@@ -5,16 +5,16 @@ import com.igorwojda.showcase.app.data.retrofit.AuthenticationInterceptor
 import com.igorwojda.showcase.app.data.retrofit.UserAgentInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.kodein.di.Kodein
-import org.kodein.di.generic.bind
-import org.kodein.di.generic.instance
-import org.kodein.di.generic.singleton
+import org.kodein.di.DI
+import org.kodein.di.bind
+import org.kodein.di.instance
+import org.kodein.di.singleton
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 internal const val MODULE_NAME = "App"
 
-val appModule = Kodein.Module("${MODULE_NAME}Module") {
+val appModule = DI.Module("${MODULE_NAME}Module") {
 
     bind() from singleton { AuthenticationInterceptor(BuildConfig.GRADLE_API_TOKEN) }
 
