@@ -7,10 +7,19 @@ enableFeaturePreview("ONE_LOCKFILE_PER_PROJECT")
 
 include(
     ":app",
-    ":feature_album",
-    ":feature_profile",
-    ":feature_favourite",
-    ":library_test_utils"
+    ":feature_client",
+    ":feature_lead",
+    ":feature_document",
+    ":feature_onboarding",
+    ":feature_scheduling",
+    ":feature_vehicle",
+    ":feature_vinscan",
+    ":feature_storage_access",
+    ":library_test_utils",
+    ":feature_hail",
+    ":feature_part",
+    ":feature_pdr",
+    ":feature_rrri",
 )
 
 // Gradle plugins are added via plugin management, not the classpath

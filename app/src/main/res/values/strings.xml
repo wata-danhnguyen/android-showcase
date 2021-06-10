@@ -5,9 +5,29 @@
     <string name="feature_album">feature album</string>
     <string name="feature_favourite">feature favourite</string>
     <string name="feature_profile">feature profile</string>
+    <string name="feature_client">Feature Client</string>
+    <string name="feature_lead">Feature Lead</string>
+    <string name="feature_document">Feature Document</string>
+    <string name="feature_scheduling">Feature Scheduling</string>
+    <string name="feature_onboarding">Feature Onboarding</string>
+    <string name="feature_storage_access">Feature Storage Access</string>
+    <string name="feature_vehicle">Feature Vehicle</string>
+    <string name="feature_vinscan">Feature Vinscan</string>
+    <string name="feature_hail">Feature Hail</string>
+    <string name="feature_part">Feature Part</string>
+    <string name="feature_pdr">Feature Pdr</string>
+    <string name="feature_rrri">Feature Rrri</string>
 
     <!--Bottom menu-->
     <string name="albums">Albums</string>
     <string name="favorites">Favorites</string>
     <string name="profile">Profile</string>
+    <string name="client">Client</string>
+    <string name="lead">Lead</string>
+    <string name="document">Document</string>
+    <string name="scheduling">Scheduling</string>
+    <string name="onboarding">Onboarding</string>
+    <string name="storage_access">Storage Access</string>
+    <string name="hehicle">Vehicle</string>
+    <string name="vinscan">Vinscan</string>
 </resources>

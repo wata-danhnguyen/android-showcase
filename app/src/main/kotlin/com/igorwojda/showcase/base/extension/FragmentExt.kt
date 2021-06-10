@@ -1,5 +1,6 @@
 package com.igorwojda.showcase.base.extension
 
+import android.net.Uri
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
@@ -29,6 +30,10 @@ import timber.log.Timber
  */
 fun Fragment.navigateSafe(directions: NavDirections, navOptions: NavOptions? = null) {
     if (canNavigate()) findNavController().navigate(directions, navOptions)
+}
+
+fun Fragment.navigateDeepLinkSafe(deepLink: Uri, navOptions: NavOptions? = null) {
+    if (canNavigate()) findNavController().navigate(deepLink, navOptions)
 }
 
 /**

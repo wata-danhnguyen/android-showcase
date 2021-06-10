@@ -1,6 +1,7 @@
 package com.igorwojda.showcase.app.presentation
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.igorwojda.showcase.R
@@ -23,15 +24,8 @@ class NavHostActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        initBottomNavigation()
+        navManager.navController = navController
         initNavManager()
-    }
-
-    private fun initBottomNavigation() {
-        binding.bottomNav.setupWithNavController(navController)
-
-        // Disables reselection of bottom menu item, so fragments are not recreated when clicking on the same menu item
-        binding.bottomNav.setOnNavigationItemReselectedListener { }
     }
 
     private fun initNavManager() {
@@ -40,6 +34,13 @@ class NavHostActivity : BaseActivity() {
             val currentFragment = navHostFragment?.childFragmentManager?.fragments?.get(0)
 
             currentFragment?.navigateSafe(it)
+        }
+
+        navManager.setOnNavDeepLinkEvent {
+//            val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment)
+//            val currentFragment = navHostFragment?.childFragmentManager?.fragments?.get(0)
+            Toast.makeText(this,"Clicked",Toast.LENGTH_LONG).show()
+            navController.navigate(it)
         }
     }
 }

@@ -6,9 +6,20 @@ import kotlin.reflect.full.memberProperties
 object ModuleDependency {
     // All consts are accessed via reflection
     const val APP = ":app"
-    const val FEATURE_ALBUM = ":feature_album"
-    const val FEATURE_PROFILE = ":feature_profile"
-    const val FEATURE_FAVOURITE = ":feature_favourite"
+    const val FEATURE_CLIENT = ":feature_client"
+    const val FEATURE_LEAD = ":feature_lead"
+    const val FEATURE_DOCUMENT = ":feature_document"
+    const val FEATURE_SCHEDULING = ":feature_scheduling"
+    const val FEATURE_ONBOARDING = ":feature_onboarding"
+    const val FEATURE_STORAGE_ACCESS = ":feature_storage_access"
+    const val FEATURE_VEHICLE = ":feature_vehicle"
+    const val FEATURE_VINSCAN = ":feature_vinscan"
+
+    const val FEATURE_HAIL = ":feature_hail"
+    const val FEATURE_PART = ":feature_part"
+    const val FEATURE_PDR = ":feature_pdr"
+    const val FEATURE_RRRI = ":feature_rrri"
+
     const val LIBRARY_TEST_UTILS = ":library_test_utils"
 
     // False positive" function can be private"
@@ -26,9 +37,10 @@ object ModuleDependency {
      */
     fun getFeatureModules(): Set<String> {
         val featurePrefix = ":feature_"
+        val featurePrefixService = ":feature_"
 
         return getAllModules()
-            .filter { it.startsWith(featurePrefix) }
+            .filter { it.startsWith(featurePrefix) || it.startsWith(featurePrefixService) }
             .toSet()
     }
 }

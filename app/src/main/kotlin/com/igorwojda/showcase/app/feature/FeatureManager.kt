@@ -16,6 +16,7 @@ object FeatureManager {
             try {
                 Class.forName(it).kotlin.objectInstance as KodeinModuleProvider
             } catch (e: ClassNotFoundException) {
+                println(e.message)
                 throw ClassNotFoundException("Kodein module class not found $it")
             }
         }
