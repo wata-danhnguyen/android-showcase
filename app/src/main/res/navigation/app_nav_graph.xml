@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/app_navigation_graph"
+    android:id="@+id/app_nav_graph"
     app:startDestination="@id/fragmentClient">
 
     <fragment
@@ -11,5 +11,13 @@
     <include-dynamic
         android:id="@+id/featureClientNavGraph"
         app:graphResName="feature_client_nav_graph"
-        app:moduleName="feature_client" />
+        app:moduleName="feature_profile"/>
+
+    <action
+        android:id="@+id/action_global_client_flow"
+        app:destination="@id/featureClientNavGraph"
+        app:popUpTo="@id/app_nav_graph"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim" />
+
 </navigation>

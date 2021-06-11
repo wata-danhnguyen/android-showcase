@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/client_flow"
     app:startDestination="@id/clientFragment">
     <fragment
         android:id="@+id/clientFragment"
         android:name="com.igorwojda.showcase.feature.client.presentation.client.ClientFragment">
+
+        <deepLink app:uri="client://clientFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.igorwojda.showcase.feature.client.presentation.test.TestFragment">
+
+        <deepLink app:uri="client://testFragment" />
 
     </fragment>
 </navigation>

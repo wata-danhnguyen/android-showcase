@@ -3,31 +3,22 @@ package com.igorwojda.showcase.base.presentation.navigation
 import android.net.Uri
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
+import com.igorwojda.showcase.AppNavGraphDirections
 
 class NavManager {
     private var navEventListener: ((navDirections: NavDirections) -> Unit)? = null
 
-    private var navDeeplinkEventListener: ((deepLink: Uri) -> Unit)? = null
+    lateinit var navController: NavController
 
-    var navController : NavController? = null
-
-    fun navigate(id: Int) {
-        navController?.navigate(id)
+    fun navigateToFlow(navigationFlow: NavigationFlow) = when (navigationFlow) {
+        NavigationFlow.ClientFlow -> navController.navigate(AppNavGraphDirections.actionGlobalClientFlow())
     }
 
     fun navigate(navDirections: NavDirections) {
         navEventListener?.invoke(navDirections)
     }
 
-    fun navigate(deepLink: Uri) {
-        navDeeplinkEventListener?.invoke(deepLink)
-    }
-
     fun setOnNavEvent(navEventListener: (navDirections: NavDirections) -> Unit) {
         this.navEventListener = navEventListener
-    }
-
-    fun setOnNavDeepLinkEvent(navEventListener: (deepLink: Uri) -> Unit) {
-        this.navDeeplinkEventListener = navEventListener
     }
 }

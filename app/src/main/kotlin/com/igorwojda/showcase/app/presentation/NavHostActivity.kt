@@ -1,18 +1,18 @@
 package com.igorwojda.showcase.app.presentation
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.navigation.Navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.igorwojda.showcase.R
 import com.igorwojda.showcase.base.delegate.viewBinding
 import com.igorwojda.showcase.base.extension.navigateSafe
 import com.igorwojda.showcase.base.presentation.activity.BaseActivity
 import com.igorwojda.showcase.base.presentation.navigation.NavManager
+import com.igorwojda.showcase.base.presentation.navigation.NavigationFlow
+import com.igorwojda.showcase.base.presentation.navigation.ToFlowNavigatable
 import com.igorwojda.showcase.databinding.ActivityNavHostBinding
 import org.kodein.di.generic.instance
 
-class NavHostActivity : BaseActivity() {
+class NavHostActivity : BaseActivity(), ToFlowNavigatable {
 
     private val binding: ActivityNavHostBinding by viewBinding()
 
@@ -35,12 +35,9 @@ class NavHostActivity : BaseActivity() {
 
             currentFragment?.navigateSafe(it)
         }
+    }
 
-        navManager.setOnNavDeepLinkEvent {
-//            val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment)
-//            val currentFragment = navHostFragment?.childFragmentManager?.fragments?.get(0)
-            Toast.makeText(this,"Clicked",Toast.LENGTH_LONG).show()
-            navController.navigate(it)
-        }
+    override fun navigateToFlow(flow: NavigationFlow) {
+        navManager.navigateToFlow(flow)
     }
 }
