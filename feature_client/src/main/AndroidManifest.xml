@@ -2,10 +2,19 @@
 <manifest xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.igorwojda.showcase.feature.client">
 
+<!--    <dist:module-->
+<!--        dist:instant="false"-->
+<!--        dist:onDemand="false"-->
+<!--        dist:title="@string/feature_client">-->
+<!--        <dist:fusing dist:include="true" />-->
+<!--    </dist:module>-->
+
     <dist:module
-        dist:instant="false"
-        dist:onDemand="false"
+        dist:instant="true"
         dist:title="@string/feature_client">
+        <dist:delivery>
+            <dist:install-time />
+        </dist:delivery>
         <dist:fusing dist:include="true" />
     </dist:module>
 

@@ -37,13 +37,13 @@
         android:id="@+id/btnToDocument"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To Document" />
+        android:text="To Client Nav" />
 
     <Button
         android:id="@+id/btnToTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To Test DeepLink" />
+        android:text="To Test in Client Nav DeepLink" />
 
     <Button
         android:layout_width="wrap_content"

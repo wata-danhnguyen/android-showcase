@@ -28,5 +28,5 @@ fun NavController.deepLinkNavigateTo(
 
 sealed class DeepLinkDestination(val address: String) {
     object Client : DeepLinkDestination("client://clientFragment")
-    object Test : DeepLinkDestination("client://test")
+    object Test : DeepLinkDestination("client://testFragment")
 }

@@ -11,12 +11,11 @@
     <include-dynamic
         android:id="@+id/featureClientNavGraph"
         app:graphResName="feature_client_nav_graph"
-        app:moduleName="feature_profile"/>
+        app:moduleName="feature_client" />
 
     <action
         android:id="@+id/action_global_client_flow"
         app:destination="@id/featureClientNavGraph"
-        app:popUpTo="@id/app_nav_graph"
         app:enterAnim="@anim/nav_default_enter_anim"
         app:exitAnim="@anim/nav_default_exit_anim" />
 

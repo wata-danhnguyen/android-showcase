@@ -28,8 +28,8 @@ class HomeFragment : InjectionFragment(R.layout.fragment_home) {
             (requireActivity() as ToFlowNavigatable).navigateToFlow(NavigationFlow.ClientFlow)
         }
 
-//        binding.btnToTest.setOnClickListener {
-//            findNavController().deepLinkNavigateTo(DeepLinkDestination.Test)
-//        }
+        binding.btnToTest.setOnClickListener {
+            findNavController().deepLinkNavigateTo(DeepLinkDestination.Test)
+        }
     }
 }
