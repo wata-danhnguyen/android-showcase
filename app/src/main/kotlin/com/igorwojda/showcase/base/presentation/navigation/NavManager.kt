@@ -12,6 +12,12 @@ class NavManager {
     fun navigateToFlow(navigationFlow: NavigationFlow) = when (navigationFlow) {
         NavigationFlow.ClientFlow -> navController.navigate(AppNavGraphDirections.actionGlobalClientFlow())
         NavigationFlow.DocumentFlow -> navController.navigate(AppNavGraphDirections.actionGlobalDocumentFlow())
+        NavigationFlow.ServiceFlow -> navController.navigate(AppNavGraphDirections.actionGlobalServiceFlow())
+
+        NavigationFlow.ServiceHailFlow -> navController.navigate(AppNavGraphDirections.actionGlobalHailFlow())
+        NavigationFlow.ServicePartFlow -> navController.navigate(AppNavGraphDirections.actionGlobalPartFlow())
+        NavigationFlow.ServicePdrFlow -> navController.navigate(AppNavGraphDirections.actionGlobalPdrFlow())
+        NavigationFlow.ServiceRrriFlow -> navController.navigate(AppNavGraphDirections.actionGlobalRrriFlow())
     }
 
     fun navigate(navDirections: NavDirections) {

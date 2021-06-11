@@ -33,5 +33,9 @@ class EstimatesFragment : InjectionFragment(R.layout.fragment_estimate) {
         binding.btnToClient.setOnClickListener {
             (requireActivity() as ToFlowNavigatable).navigateToFlow(NavigationFlow.ClientFlow)
         }
+
+        binding.btnToServices.setOnClickListener {
+            (requireActivity() as ToFlowNavigatable).navigateToFlow(NavigationFlow.ServiceFlow)
+        }
     }
 }

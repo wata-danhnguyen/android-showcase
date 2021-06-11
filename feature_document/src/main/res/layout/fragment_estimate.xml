@@ -6,19 +6,31 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnToClient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to client get data" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtClientName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@android:color/white"
+            android:hint="@string/client_name_not_data" />
+    </LinearLayout>
+
     <Button
-        android:id="@+id/btnToClient"
+        android:id="@+id/btnToServices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="to client get data" />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edtClientName"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:background="@android:color/white"
-        android:hint="@string/client_name_not_data" />
+        android:text="to Services" />
 
     <TextView
         android:id="@+id/underConstructionTextView"

@@ -15,6 +15,7 @@ object ModuleDependency {
     const val FEATURE_VEHICLE = ":feature_vehicle"
     const val FEATURE_VINSCAN = ":feature_vinscan"
 
+    const val FEATURE_SERVICE = ":feature_service"
     const val FEATURE_HAIL = ":feature_hail"
     const val FEATURE_PART = ":feature_part"
     const val FEATURE_PDR = ":feature_pdr"

@@ -13,6 +13,7 @@
     <string name="feature_storage_access">Feature Storage Access</string>
     <string name="feature_vehicle">Feature Vehicle</string>
     <string name="feature_vinscan">Feature Vinscan</string>
+    <string name="feature_service">Feature Service</string>
     <string name="feature_hail">Feature Hail</string>
     <string name="feature_part">Feature Part</string>
     <string name="feature_pdr">Feature Pdr</string>

@@ -16,6 +16,7 @@ include(
     ":feature_vinscan",
     ":feature_storage_access",
     ":library_test_utils",
+    ":feature_service",
     ":feature_hail",
     ":feature_part",
     ":feature_pdr",
