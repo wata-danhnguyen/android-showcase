@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/documentFragment">
+
+    <fragment
+        android:id="@+id/documentFragment"
+        android:name="com.igorwojda.showcase.feature.document.presentation.document.DocumentFragment">
+
+        <action
+            android:id="@+id/action_documentFragment_to_estimatesFragment"
+            app:destination="@id/estimatesFragment" />
+        <action
+            android:id="@+id/action_documentFragment_to_invoiceFragment"
+            app:destination="@id/invoiceFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/estimatesFragment"
+        android:name="com.igorwojda.showcase.feature.document.presentation.estimate.EstimatesFragment">
+
+        <deepLink app:uri="document://estimatesFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/invoiceFragment"
+        android:name="com.igorwojda.showcase.feature.document.presentation.invoices.InvoiceFragment">
+
+        <deepLink app:uri="document://invoiceFragment" />
+
+    </fragment>
+</navigation>

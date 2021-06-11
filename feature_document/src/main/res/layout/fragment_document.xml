@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:text="Home fragment"
+        android:text="Document Nav"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,27 +34,14 @@
         app:lottie_fileName="lottie_building_screen.json" />
 
     <Button
-        android:id="@+id/btnToClient"
+        android:id="@+id/btnToEstimateFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To Client Nav" />
+        android:text="to estimate" />
 
     <Button
-        android:id="@+id/btnToTest"
+        android:id="@+id/btnToInvoiceFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To Test in Client Nav DeepLink" />
-
-    <Button
-        android:id="@+id/btnToDocument"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="To document" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="To D" />
-
-
+        android:text="to invoice" />
 </LinearLayout>

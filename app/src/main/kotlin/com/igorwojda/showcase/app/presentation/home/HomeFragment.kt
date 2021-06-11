@@ -24,12 +24,16 @@ class HomeFragment : InjectionFragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnToDocument.setOnClickListener {
+        binding.btnToClient.setOnClickListener {
             (requireActivity() as ToFlowNavigatable).navigateToFlow(NavigationFlow.ClientFlow)
         }
 
         binding.btnToTest.setOnClickListener {
             findNavController().deepLinkNavigateTo(DeepLinkDestination.Test)
+        }
+
+        binding.btnToDocument.setOnClickListener {
+            (requireActivity() as ToFlowNavigatable).navigateToFlow(NavigationFlow.DocumentFlow)
         }
     }
 }

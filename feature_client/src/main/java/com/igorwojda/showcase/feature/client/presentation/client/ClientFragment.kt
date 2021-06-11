@@ -2,6 +2,8 @@ package com.igorwojda.showcase.feature.client.presentation.client
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.igorwojda.showcase.base.delegate.viewBinding
 import com.igorwojda.showcase.base.presentation.fragment.InjectionFragment
@@ -22,8 +24,11 @@ class ClientFragment : InjectionFragment(R.layout.fragment_client) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.underConstructionAnimation.setOnClickListener {
-            findNavController().deepLinkNavigateTo(DeepLinkDestination.Client)
+        binding.btnPickclient.setOnClickListener {
+            setFragmentResult("client_id_pick", bundleOf("client_id_name" to "client id 123"))
+
+            // Step 4. Go back to Fragment A
+            findNavController().navigateUp()
         }
     }
 }

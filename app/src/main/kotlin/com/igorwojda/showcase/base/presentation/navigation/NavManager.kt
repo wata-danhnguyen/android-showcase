@@ -1,6 +1,5 @@
 package com.igorwojda.showcase.base.presentation.navigation
 
-import android.net.Uri
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import com.igorwojda.showcase.AppNavGraphDirections
@@ -12,6 +11,7 @@ class NavManager {
 
     fun navigateToFlow(navigationFlow: NavigationFlow) = when (navigationFlow) {
         NavigationFlow.ClientFlow -> navController.navigate(AppNavGraphDirections.actionGlobalClientFlow())
+        NavigationFlow.DocumentFlow -> navController.navigate(AppNavGraphDirections.actionGlobalDocumentFlow())
     }
 
     fun navigate(navDirections: NavDirections) {

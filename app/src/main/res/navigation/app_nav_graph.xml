@@ -13,9 +13,20 @@
         app:graphResName="feature_client_nav_graph"
         app:moduleName="feature_client" />
 
+    <include-dynamic
+        android:id="@+id/documentClientNavGraph"
+        app:graphResName="feature_document_nav_graph"
+        app:moduleName="feature_document" />
+
     <action
         android:id="@+id/action_global_client_flow"
         app:destination="@id/featureClientNavGraph"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim" />
+
+    <action
+        android:id="@+id/action_global_document_flow"
+        app:destination="@id/documentClientNavGraph"
         app:enterAnim="@anim/nav_default_enter_anim"
         app:exitAnim="@anim/nav_default_exit_anim" />
 
