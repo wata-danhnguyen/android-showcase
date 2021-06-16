@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/servicesAllFragment">
+    <fragment
+        android:id="@+id/servicesAllFragment"
+        android:name="com.watasolutions.services_all.fragment.ServicesAllFragment" />
+
+    <include-dynamic
+        android:id="@+id/featurePdrNavGraph"
+        app:graphResName="feature_services_pdr_nav_graph"
+        app:moduleName="service_pdr" />
+
+    <include-dynamic
+        android:id="@+id/featureHailNavGraph"
+        app:graphResName="feature_services_hail_nav_graph"
+        app:moduleName="service_hail" />
+
+    <action
+        android:id="@+id/action_global_pdr_flow"
+        app:destination="@id/featurePdrNavGraph"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim" />
+
+    <action
+        android:id="@+id/action_global_hail_flow"
+        app:destination="@id/featureHailNavGraph"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim" />
+</navigation>
